@@ -58,7 +58,7 @@ The container is totally free. Please first register on the [iBEAT V2.0 Cloud](h
 ## Run the pipeline
 Before running the pipeline, please:
 * Create a directory (let's say **`your_data_folder`**), which will be mounted to the container. The container will load the data for processing from this directory and also save the processed results to this directory. 
-* Put the license file into the created folder.
+* Put the license file (please do not rename/modify the license file) into the created folder.
 
 After that, you can run the pipeline with the following example code:
 ```
