@@ -4,11 +4,11 @@ This ```README``` illustrates how to install and run the Docker version of iBEAT
 # System requirement
 Since this is a *Linux* based container, please install the container on a Linux system. The supported systems include but not limited to `Ubuntu`, `Debian`, `CentOS` and `Red Hat`. 
 
-The pipeline is developed based on the Deep convolutional neural network. The GPU is required to support the processing. During the running, around 3 GB GPU memory is required. 
+The pipeline is developed based on the deep convolutional neural network techniques. A GPU is required to support the processing. During the running, around 3 GB GPU memory is required. 
 
 # Installation
 ### Install Docker
-Please refer to the official installation guideline [Install Docker on Linux](https://docs.docker.com/desktop/install/linux-install/). You can follow the below commands to install docker on the popular Ubuntu Linux system. If you have previously installed Docker on your computer, please skip this step.
+Please refer to the official installation guideline [Install Docker on Linux](https://docs.docker.com/desktop/install/linux-install/). You can follow the below commands to install the Docker on the popular Ubuntu Linux system. If you have previously installed Docker on your computer, please skip this step.
 ```
 sudo apt update
 sudo apt install ca-certificates curl gnupg lsb-release
@@ -72,11 +72,11 @@ In the above example, you can regard `docker run --gpus --rm -it -v /your_data_f
 - `ibeatgroup/ibeat_v2:release100` is the container name of the pipeline.
 
 The **important parameters** are: 
-* `--t1` or `--t2`: the path of the T1w and T2w infant brain images (relative to **`your_data_folder`**, which is the data folder you plan to mount into the container. If you only have one modality, just input the available modaility (T1w or T2w).
-* `--age[a]`: the infant age at acquiation (in MONTH).
-* `--out_dir[d]`: the folder where to save the result. If empty, it will be created. Of note, this folder is rooted based on the inputed data folder (*your_data_folder* in the above example).
-* `--sub_name[n]`: the subject name for the current processing subject. If you don’t assign, the pipeline will refer based on your T1 and T2 image name.
-* `--skip_surface`: whether to skill the cortical surface reconstruction procedure.
+* `--t1` or `--t2`: the path of the T1w or T2w infant brain image (relative to **`your_data_folder`**, which is the data folder you plan to mount into the container. If you only have one modality, just input the available modaility (T1w or T2w).
+* `--age[a]`: the infant age at scan (in MONTH).
+* `--out_dir[d]`: the folder where to save the results. If empty, it will be created. Of note, this folder is rooted based on the inputed data folder (*your_data_folder* in the above example).
+* `--sub_name[n]`: the subject name for the current processing subject. If you don’t assign, the pipeline will refer based on your T1 and T2 image names.
+* `--skip_surface`: whether to skip the cortical surface reconstruction procedure.
 You can get detailed parameter information and simple example command by just running the pipeline without any parameters. 
 
 The above command is a typical example to process one subject with both T1w and T2w images. You can also only input a single T1w (or T2w) image if you only have one modality.
@@ -106,11 +106,11 @@ After the processing is finished, in the "mounted" folder **`your_data_folder`**
 
 # Frequently asked questions
 ### Do I must have a GPU to run the pipeline?
-Yes, in the current version, we do need GPU support to run the pipeline. In our later release, we will also release the pipeline that only needs a CPU for computation.
+Yes. In the current version, we do need GPU support to run the pipeline. In future, we will also release the pipeline that only needs a CPU for computation.
 ### Is the pipeline robust to the imaging parameters?
-Yes. We have successfully processed 16,000+ infant brain images with various protocols and scanners from 100+ instutions. Please see https://ibeat.wildapricot.org/Feedbacks. 
+Yes. We have successfully processed 16,000+ infant brain images with various imaging protocols and scanners from 100+ instutions. Please see https://ibeat.wildapricot.org/Feedbacks. 
 ### Are there any differences between iBEAT V2.0 Docker and iBEAT V2.0 Cloud (http://www.ibeat.cloud)?
-Yes. The iBEAT V2.0 Cloud (http://www.ibeat.cloud) is updated with our latest developments while the Docker could be slightly delayed. For the optimal performance, iBEAT V2.0 Cloud is highly recommended.
+Yes. The iBEAT V2.0 Cloud (http://www.ibeat.cloud) is timely updated with our latest developments, while the Docker version could be slightly delayed in updating. For the optimal performance, iBEAT V2.0 Cloud is highly recommended.
 
 
 # How to Cite?
@@ -123,7 +123,7 @@ Please cite the following papers if you use the results provided by the iBEAT V2
 # Contacts
 The iBEAT V2.0 software is developed by the University of North Carolina at Chapel Hill:
 * Volume-based analysis was designed in the Developing Brain Computing Lab, led by Dr. Li Wang (li_wang@med.unc.edu);
-* Surface-based analysis was designed in the Brain Research through Analysis and Informatics of Neuroimaging Lab, led by Dr. Gang Li (gang_li@med.unc.edu).
+* Surface-based analysis was designed in the Brain Research through Analysis and Informatics of Neuroimaging (BRAIN) Lab, led by Dr. Gang Li (gang_li@med.unc.edu).
 
 For questions/bugs/feedback, please contact:
 
