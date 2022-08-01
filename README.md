@@ -110,7 +110,7 @@ After the processing is finished, in the "mounted" folder **`your_data_folder`**
 ### Do I must have GPU to run the pipeline?
 Yes, in the current version, we do need GPU support to run the pipeline. Because the segmentation methods in the pipeline are mainly deep learning-based, which needs GPU for efficiency. However, in our later release, we will also release the pipeline that only needs a CPU for computation.
 ### Is the pipeline robust to the imaging parameters?
-Yes. We have successfully processed 16,000 infant brain images with various protocols and scanners from 100+ instutions. Please see https://ibeat.wildapricot.org/Feedbacks. 
+Yes. We have successfully processed 16,000+ infant brain images with various protocols and scanners from 100+ instutions. Please see https://ibeat.wildapricot.org/Feedbacks. 
 ### Are there any differences with iBEAT V2.0 Cloud (http://www.ibeat.cloud)?
 Yes. The iBEAT V2.0 Cloud (http://www.ibeat.cloud) is updated with our latest developments while the Docker could be slightly delayed. For the optimal performance, iBEAT V2.0 Cloud is highly recommended.
 
