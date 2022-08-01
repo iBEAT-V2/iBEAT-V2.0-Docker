@@ -40,7 +40,7 @@ After the installation, please restart the Docker daemon to complete the install
 ```
 sudo systemctl restart docker
 ```
-Finally, you can check whether you have successfully installed the ```Nvidia-docker``` using the following command.
+Finally, you can check whether you have successfully installed the ```Nvidia-docker``` using the following command:
 ```
 docker run --rm --gpus nvidia/cuda:9.0-base nvidia-smi
 ```
@@ -49,7 +49,7 @@ If succeeded, the output should be the GPU card information on your PC.
 ### Download the pipeline
 Simply ```docker pull ibeatgroup/ibeat_v2:release_version_tag```, you may need to change the ```release_version_tag``` based on our release. 
 
-Currently, the latest container tag is ```release100```, which is an initial release of our iBEAT V2.0 pipeline. We will update this regularly.
+Currently, the latest container tag is ```release100``` (thus run ```docker pull ibeatgroup/ibeat_v2:release100``` to download the pipeline), which is an initial release of our iBEAT V2.0 pipeline. We will update this regularly.
 
 After downloading, you can use ```docker images``` to see the container images you have downloaded.
 
