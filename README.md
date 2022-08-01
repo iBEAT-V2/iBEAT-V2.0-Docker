@@ -23,7 +23,7 @@ Since the docker needs the `sudo` to run the general commands, to run without `s
 sudo group add docker
 sudo usermod -aG docker ${USER}
 ```
-After running these commands, you may need to restart your computer to make the configuration take effect. One easy way to check whether you have successfully installed the Docker or not is to run the Docker using the command ```docker info```, which should be without ```sudo``` requirement is you have added your username to the `docker` group. Please refer to [more details](https://docs.docker.com/get-started/) for potential issues on Docker.
+After running these commands, you may need to restart your computer to make the configuration take effect. One easy way to check whether you have successfully installed the Docker or not is to run the Docker using the command ```docker info```, which dose not need ```sudo``` requirement if you have added your username to the `docker` group. Please refer to [more details](https://docs.docker.com/get-started/) for potential issues on Docker.
 
 
 ### Install Nvidia-docker
