@@ -1,5 +1,5 @@
 # Introduction
-This ```README``` illustrates how to install and run the docker version of iBEAT V2.0 pipeline, which is an infant-dedicated structural imaging processing pipeline for infant brain MR images. More detail of the pipeline can be referred to [iBEAT V2.0 Cloud](http://www.ibeat.cloud). 
+This ```README``` illustrates how to install and run the docker version of iBEAT V2.0 pipeline, which is an infant-dedicated structural imaging processing pipeline for infant brain MR images. More details of the pipeline can be referred to [iBEAT V2.0 Cloud](http://www.ibeat.cloud). 
 
 # System requirement
 Since this is a *linux* based container, please install the container on a Linux system. The supported systems include but not limited to `Ubuntu`, `Debian`, `CentOS` and `Red Hat`. 
