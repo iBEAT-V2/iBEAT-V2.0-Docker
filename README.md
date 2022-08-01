@@ -79,7 +79,7 @@ The **important parameters** are:
 * `--skip_surface`: whether to skill the cortical surface reconstruction procedure.
 You can get detailed parameter information and simple example command by just running the pipeline without any parameters. 
 
-The above command is a typical example to process one subject with both T1w and T2w images. You can also only input a single T1w (or T2w) image if you only have one modality available.
+The above command is a typical example to process one subject with both T1w and T2w images. You can also only input a single T1w (or T2w) image if you only have one modality.
 
 ## Batch processing
 Since `docker run --gpus=all --rm -it -v /your_data_folder:/InfantData --user $(id -u):$(id -g) ibeatgroup/ibeat_v2:release100` can be regarded as single command, you can also write a script to process the data in a batch by treating the pipeline command as a simple command in a ```for``` or ```while``` loop. The following is a simple example if you are using the bash script,
@@ -92,12 +92,12 @@ done
 ## Output illustration
 After the processing is finished, in the "mounted" folder **`your_data_folder`**, all the processing results will be generated. The following explain what the results are: 
 * T1(or T2).nii.gz:	The raw image file.
-* T1(or T2)-brainmask.nii.gz: The brain mask of T1 (or T2).
-* T1(or T2)-ceremask.nii.gz: The cerebrum mask of T1 (or T2).
-* T1(or T2)-skullstripped.nii.gz: The skull stripped brain image of T1 (or T2).
-* T1(or T2)-skullstripped-rmcere.nii.gz: The skull stripped and cerebellum removed T1 (or T2) image.
-* T1(or T2)-skullstripped-rmcere-tissue.nii.gz: The cerebrum tissue segmentation in T1 (or T2) space.
-* T2-ToT1.nii.gz: The aligned T2 in T1 space.
+* T1(or T2)-brainmask.nii.gz: The brain mask of T1w (or T2w).
+* T1(or T2)-ceremask.nii.gz: The cerebrum mask of T1w (or T2w).
+* T1(or T2)-skullstripped.nii.gz: The skull stripped brain image of T1w (or T2w).
+* T1(or T2)-skullstripped-rmcere.nii.gz: The skull stripped and cerebellum removed T1w (or T2w) image.
+* T1(or T2)-skullstripped-rmcere-tissue.nii.gz: The cerebrum tissue segmentation in T1w (or T2w) space.
+* T2-ToT1.nii.gz: The aligned T2w in T1w space.
 * T1(or T2)-skullstripped-rmcere.lh.nii.gz: Left hemisphere tissue image.
 * T1(or T2)-skullstripped-rmcere.rh.nii.gz: Right hemisphere tissue image.
 * T1(or T2)-skullstripped-rmcere.lh.InnerSurf.PhysicalSpace.vtk: Reconstructed left hemisphere inner cortical surface.
@@ -105,8 +105,8 @@ After the processing is finished, in the "mounted" folder **`your_data_folder`**
 * T1(or T2)-skullstripped-rmcere.lh.OuterSurf.PhysicalSpace.vtk: Reconstructed left hemisphere outer cortical surface.
 
 # Frequently asked questions
-### Do I must have GPU to run the pipeline?
-Yes, in the current version, we do need GPU support to run the pipeline. Because the segmentation methods in the pipeline are mainly deep learning-based, which needs GPU for efficiency. However, in our later release, we will also release the pipeline that only needs a CPU for computation.
+### Do I must have a GPU to run the pipeline?
+Yes, in the current version, we do need GPU support to run the pipeline. In our later release, we will also release the pipeline that only needs a CPU for computation.
 ### Is the pipeline robust to the imaging parameters?
 Yes. We have successfully processed 16,000+ infant brain images with various protocols and scanners from 100+ instutions. Please see https://ibeat.wildapricot.org/Feedbacks. 
 ### Are there any differences between iBEAT V2.0 Docker and iBEAT V2.0 Cloud (http://www.ibeat.cloud)?
