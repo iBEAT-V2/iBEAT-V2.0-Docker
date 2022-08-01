@@ -4,7 +4,7 @@ This ```README``` illustrates how to install and run the docker version of iBEAT
 # System requirement
 Since this is a *Linux* based container, please install the container on a Linux system. The supported systems include but not limited to `Ubuntu`, `Debian`, `CentOS` and `Red Hat`. 
 
-The pipeline is developed based on the Deep convolutional neuronetwork. The GPU is required to support the processing. During the running, around 3 GB GPU memory is required. 
+The pipeline is developed based on the Deep convolutional neural network. The GPU is required to support the processing. During the running, around 3 GB GPU memory is required. 
 
 # Installation
 ### Install Docker
