@@ -66,12 +66,12 @@ After that, you can run the pipeline with the following example code:
 ```
 docker run --gpus=all --rm -it -v /your_data_folder:/InfantData --user $(id -u):$(id -g) ibeatgroup/ibeat_v2:release100 --t1 <t1_file_path> --t2 <t2_file_path> --age <age_in_month> --out_dir <result_dir> --sub_name <subject_id>
 ```
-In the above example, you can regard `docker run --gpus --rm -it -v /your_data_folder:/InfantData --user $(id -u):$(id -g) ibeatgroup/ibeat_v2:release100` as a simple linux command (despite it is long). 
-- `docker run --gpus=all` is the command to run a docker container with gpu support, you can change `--gpu=all` to the specific gpu id if you have multiple gpus installed, for example, `--gpu=0` will use the first gpu. 
-- `--rm` indicates that the container will be removed from the memory once it is finished; 
-- `-v` indicates the input data folder. **`/your_data_folder`** is the directory where you put the processing data and the license. **`/InfantData`** is the internal path inside the container to locate the data and license. 
-- `--user $(id -u):$(id -g)` indicates the container will be runned in the provided user (current user of the linux) and provided group (current user group). 
-- `ibeatgroup/ibeat_v2:release100` is the container name of the pipeline. 
+In the above example, you can regard `docker run --gpus --rm -it -v /your_data_folder:/InfantData --user $(id -u):$(id -g) ibeatgroup/ibeat_v2:release100` as a simple linux command (despite it is long)
+- `docker run --gpus=all` is the command to run a docker container with gpu support, you can change `--gpu=all` to the specific gpu id if you have multiple gpus installed, for example, `--gpu=0` will use the first gpu
+- `--rm` indicates that the container will be removed from the memory once it is finished
+- `-v` indicates the input data folder. **`/your_data_folder`** is the directory where you put the processing data and the license. **`/InfantData`** is the internal path inside the container to locate the data and license
+- `--user $(id -u):$(id -g)` indicates the container will be runned in the provided user (current user of the linux) and provided group (current user group)
+- `ibeatgroup/ibeat_v2:release100` is the container name of the pipeline
 
 The **important parameters** are: 
 * `--t1` or `--t2`: the path of the t1w and t2w infant brain image (relative to **`your_data_folder`**, which is the data folder you plan to mount into the container. If only have one modality, just input the available modaility (t1 or t2).
