@@ -81,7 +81,7 @@ The **important parameters** are:
 * `--skip_surface`: whether to skill the cortical surface reconstruction procedure.
 You can get detailed parameter information and simple example command by just running the pipeline without any parameters. 
 
-The above command is a typical example to process one image with both T1w and T2w images. You can also only input a single T1w (or T2w) images if you only have one modality available.
+The above command is a typical example to process one subject with both T1w and T2w images. You can also only input a single T1w (or T2w) image if you only have one modality available.
 
 ## Batch processing
 Since `docker run --gpus=all --rm -it -v /your_data_folder:/InfantData --user $(id -u):$(id -g) ibeatgroup/ibeat_v2:release100` can be regarded as single command, you can also write a script to process the data in a batch by treating the pipeline command as a simple command in a ```for``` or ```while``` loop. The following is a simple example if you are using the bash script,
@@ -102,9 +102,9 @@ After the processing is finished, in the "mounted" folder **`your_data_folder`**
 * T2-ToT1.nii.gz: The aligned T2 in T1 space.
 * T1(or T2)-skullstripped-rmcere.lh.nii.gz: Left hemisphere tissue image.
 * T1(or T2)-skullstripped-rmcere.rh.nii.gz: Right hemisphere tissue image.
-* T1(or T2)-skullstripped-rmcere.lh.InnerSurf.PhysicalSpace.vtk: Reconstructed left hemisphere inner cortical surface
-* T1(or T2)-skullstripped-rmcere.lh.MiddleSurf.PhysicalSpace.vtk: Reconstructed left hemisphere middle cortical surface
-* T1(or T2)-skullstripped-rmcere.lh.OuterSurf.PhysicalSpace.vtk: Reconstructed left hemisphere outer cortical surface
+* T1(or T2)-skullstripped-rmcere.lh.InnerSurf.PhysicalSpace.vtk: Reconstructed left hemisphere inner cortical surface.
+* T1(or T2)-skullstripped-rmcere.lh.MiddleSurf.PhysicalSpace.vtk: Reconstructed left hemisphere middle cortical surface.
+* T1(or T2)-skullstripped-rmcere.lh.OuterSurf.PhysicalSpace.vtk: Reconstructed left hemisphere outer cortical surface.
 
 # Frequently asked questions
 ### Do I must have GPU to run the pipeline?
@@ -117,14 +117,14 @@ Yes. The iBEAT V2.0 Cloud (http://www.ibeat.cloud) is updated with our latest de
 
 # How to Cite?
 Please cite the following papers if you use the results provided by the iBEAT V2.0 pipeline:
-* L. Wang, G. Li, F. Shi, X. Cao, C. Lian, D. Nie, et al., "Volume-based analysis of 6-month-old infant brain MRI for autism biomarker identification and early diagnosis," in International Conference on Medical Image Computing and Computer-Assisted Intervention, 2018, pp. 411-419
+* L. Wang, G. Li, F. Shi, X. Cao, C. Lian, D. Nie, et al., "Volume-based analysis of 6-month-old infant brain MRI for autism biomarker identification and early diagnosis," in International Conference on Medical Image Computing and Computer-Assisted Intervention, 2018, pp. 411-419.
 * G. Li, J. Nie, L. Wang, F. Shi, J. H. Gilmore, W. Lin, et al., "Measuring the dynamic longitudinal cortex development in infants by reconstruction of temporally consistent cortical surfaces," Neuroimage, vol. 90, pp. 266-279, 2014.
 * G. Li, L. Wang, P.-T. Yap, F. Wang, Z. Wu, Y. Meng, et al., "Computational neuroanatomy of baby brains: A review," NeuroImage, vol. 185, pp. 906-925, 2018.
 * G. Li, L. Wang, F. Shi, J. Gilmore, W. Lin, D. Shen, "Construction of 4D high-definition cortical surface atlases of infants: Methods and applications," Medical Image Analysis, 25: 22-36, 2015.
 
 # Contacts
 The iBEAT V2.0 software is developed by the University of North Carolina at Chapel Hill:
-* Volume-based analysis was designed in the Developing Brain Computing Lab, led by Dr. Li Wang (li_wang@med.unc.edu)
+* Volume-based analysis was designed in the Developing Brain Computing Lab, led by Dr. Li Wang (li_wang@med.unc.edu);
 * Surface-based analysis was designed in the Brain Research through Analysis and Informatics of Neuroimaging Lab, led by Dr. Gang Li (gang_li@med.unc.edu).
 
 For questions/bugs/feedback, please contact:
