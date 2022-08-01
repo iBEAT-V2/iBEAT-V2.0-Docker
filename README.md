@@ -67,15 +67,15 @@ After that, you can run the pipeline with the following example code:
 docker run --gpus=all --rm -it -v /your_data_folder:/InfantData --user $(id -u):$(id -g) ibeatgroup/ibeat_v2:release100 --t1 <t1_file_path> --t2 <t2_file_path> --age <age_in_month> --out_dir <result_dir> --sub_name <subject_id>
 ```
 In the above example, you can regard `docker run --gpus --rm -it -v /your_data_folder:/InfantData --user $(id -u):$(id -g) ibeatgroup/ibeat_v2:release100` as a simple linux command (despite it is long)
-- `docker run --gpus=all` is the command to run a docker container with gpu support, you can change `--gpu=all` to the specific gpu id if you have multiple gpus installed, for example, `--gpu=0` will use the first gpu
-- `--rm` indicates that the container will be removed from the memory once it is finished
-- `-v` indicates the input data folder. **`/your_data_folder`** is the directory where you put the processing data and the license. **`/InfantData`** is the internal path inside the container to locate the data and license
-- `--user $(id -u):$(id -g)` indicates the container will be runned in the provided user (current user of the linux) and provided group (current user group)
-- `ibeatgroup/ibeat_v2:release100` is the container name of the pipeline
+- `docker run --gpus=all` is the command to run a docker container with all gpus, you can change `--gpu=all` to a specific gpu id if you have multiple gpus installed, for example, `--gpu=0` will use the first gpu.
+- `--rm` indicates that the container will be removed from the memory once it is finished.
+- `-v` indicates the input data folder. **`/your_data_folder`** is the directory where you put the processing data and the license. **`/InfantData`** is the internal path inside the container to locate the data and license.
+- `--user $(id -u):$(id -g)` indicates the container will be runned in the provided user (current user of the linux) and provided group (current user group).
+- `ibeatgroup/ibeat_v2:release100` is the container name of the pipeline.
 
 The **important parameters** are: 
-* `--t1` or `--t2`: the path of the t1w and t2w infant brain image (relative to **`your_data_folder`**, which is the data folder you plan to mount into the container. If only have one modality, just input the available modaility (t1 or t2).
-* `--age[a]`: the infant age during in scan (in MONTH).
+* `--t1` or `--t2`: the path of the T1w and T2w infant brain image (relative to **`your_data_folder`**, which is the data folder you plan to mount into the container. If you only have one modality, just input the available modaility (T1w or T2w).
+* `--age[a]`: the infant age at acquiation (in MONTH).
 * `--out_dir[d]`: the folder where to save the result. If empty, it will be created. Of note, this folder is rooted based on the inputed data folder (*your_data_folder* in the above example).
 * `--sub_name[n]`: the subject name for the current processing subject. If you don’t assign, the pipeline will refer based on your T1 and T2 image name.
 * `--skip_surface`: whether to skill the cortical surface reconstruction procedure.
@@ -111,21 +111,21 @@ After the processing is finished, in the "mounted" folder **`your_data_folder`**
 Yes, in the current version, we do need GPU support to run the pipeline. Because the segmentation methods in the pipeline are mainly deep learning-based, which needs GPU for efficiency. However, in our later release, we will also release the pipeline that only needs a CPU for computation.
 ### Is the pipeline robust to the imaging parameters?
 Yes. We have successfully processed 16,000+ infant brain images with various protocols and scanners from 100+ instutions. Please see https://ibeat.wildapricot.org/Feedbacks. 
-### Are there any differences with iBEAT V2.0 Cloud (http://www.ibeat.cloud)?
+### Are there any differences between iBEAT V2.0 Docker and iBEAT V2.0 Cloud (http://www.ibeat.cloud)?
 Yes. The iBEAT V2.0 Cloud (http://www.ibeat.cloud) is updated with our latest developments while the Docker could be slightly delayed. For the optimal performance, iBEAT V2.0 Cloud is highly recommended.
 
 
 # How to Cite?
-Please cite the following papers if you use the results provided by iBEAT pipeline:
+Please cite the following papers if you use the results provided by the iBEAT V2.0 pipeline:
 * L. Wang, G. Li, F. Shi, X. Cao, C. Lian, D. Nie, et al., "Volume-based analysis of 6-month-old infant brain MRI for autism biomarker identification and early diagnosis," in International Conference on Medical Image Computing and Computer-Assisted Intervention, 2018, pp. 411-419
 * G. Li, J. Nie, L. Wang, F. Shi, J. H. Gilmore, W. Lin, et al., "Measuring the dynamic longitudinal cortex development in infants by reconstruction of temporally consistent cortical surfaces," Neuroimage, vol. 90, pp. 266-279, 2014.
 * G. Li, L. Wang, P.-T. Yap, F. Wang, Z. Wu, Y. Meng, et al., "Computational neuroanatomy of baby brains: A review," NeuroImage, vol. 185, pp. 906-925, 2018.
 * G. Li, L. Wang, F. Shi, J. Gilmore, W. Lin, D. Shen, "Construction of 4D high-definition cortical surface atlases of infants: Methods and applications," Medical Image Analysis, 25: 22-36, 2015.
 
 # Contacts
-The iBEAT V2.0 software is developed lead by the University of North Carolina at Chapel Hill:
+The iBEAT V2.0 software is developed by the University of North Carolina at Chapel Hill:
 * Volume-based analysis was designed in the Developing Brain Computing Lab, led by Dr. Li Wang (li_wang@med.unc.edu)
-* Surface-based analysis was designed in the Baby Brain Mapping Lab, led by Dr. Gang Li (gang_li@med.unc.edu).
+* Surface-based analysis was designed in the Brain Research through Analysis and Informatics of Neuroimaging Lab, led by Dr. Gang Li (gang_li@med.unc.edu).
 
 For questions/bugs/feedback, please contact:
 
