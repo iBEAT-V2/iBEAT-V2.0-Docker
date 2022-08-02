@@ -72,7 +72,7 @@ In the above example, you can regard `docker run --gpus --rm -it -v /your_data_f
 - `ibeatgroup/ibeat_v2:release100` is the container name of the pipeline.
 
 The **important parameters** are: 
-* `--t1` or `--t2`: the path of the T1w or T2w infant brain image (relative to **`your_data_folder`**, which is the data folder you plan to mount into the container. If you only have one modality, just input the available modaility (T1w or T2w).
+* `--t1` or `--t2`: the path of the T1w or T2w infant brain image (relative to **`your_data_folder`**, which is the data folder you plan to mount into the container. They should be in NIfTI format (.nii). If you only have one modality, just input the available modaility (T1w or T2w).
 * `--age[a]`: the infant age at scan (in MONTH).
 * `--out_dir[d]`: the folder where to save the results. If empty, it will be created. Of note, this folder is rooted based on the inputed data folder (*your_data_folder* in the above example).
 * `--sub_name[n]`: the subject name for the current processing subject. If you don’t assign, the pipeline will refer based on your T1 and T2 image names.
