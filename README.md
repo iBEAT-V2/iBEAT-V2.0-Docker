@@ -42,7 +42,7 @@ sudo systemctl restart docker
 ```
 Finally, you can check whether you have successfully installed the ```Nvidia-docker``` using the following command:
 ```
-docker run --rm --gpus nvidia/cuda:9.0-base nvidia-smi
+docker run --rm --gpus=all nvidia/cuda:9.0-base nvidia-smi
 ```
 If succeeded, the output should be the GPU card information on your PC. 
 
