@@ -1,5 +1,5 @@
 # Updating
-## Version 1.1.0
+## What Improved in Version 1.1.0
 * The cerebellum removal modal was improved.
 * Enable user to provide customized brain mask and/or cerebrum mask for the pipleine. See more details in [run the pipeline section](#run-the-pipeline).
 * The latest version can be acquired by: `docker pull ibeatgroup/ibeat_v2:release110`.
