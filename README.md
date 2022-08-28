@@ -1,3 +1,8 @@
+# Updating
+## Version 110
+* The cerebellum removal modal was improved.
+* Enable user to provide customized brain mask and/or cerebrum mask for the pipleine.
+
 # Introduction
 This ```README``` illustrates how to install and run the Docker version of iBEAT V2.0 pipeline, which is an infant-dedicated structural imaging processing pipeline for infant brain MR images. More details of the pipeline can be referred to [iBEAT V2.0 Cloud](http://www.ibeat.cloud). 
 
