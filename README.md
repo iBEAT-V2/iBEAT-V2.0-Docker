@@ -1,5 +1,5 @@
 # Updating
-## Version 110
+## Version 1.1.0
 * The cerebellum removal modal was improved.
 * Enable user to provide customized brain mask and/or cerebrum mask for the pipleine.
 
