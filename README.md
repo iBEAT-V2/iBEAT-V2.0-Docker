@@ -84,7 +84,7 @@ The **important parameters** are:
 * `--skip_surface`: whether to skip the cortical surface reconstruction procedure.
 You can get detailed parameter information and simple example command by just running the pipeline without any parameters. 
 
-The **User interventioned parameters** are:
+The **user interventioned parameters** are:
 * `--skull_mask`: the path of the user provided brain mask. If there is only one modality (either `--t1` or `--t2` is used), this would be the brain mask for that modality. If there are two modalities inputed (both `--t1` and `--t2` are used), this would be the brain mask for the t1w modality. In this case, if you also want to provide a brain mask for t2 modality, please use additional parameter `--exmod_skull_mask` (see below).
 * `--exmod_skull_mask`: the path of the user provided brain mask for t2w image when both t1w and t2w images are inputed.
 * `--cere_mask`: the path of the user provided cerebrum mask. If there is only one modality, this would be the cerebrum mask for that modality. If there are two modalities inputed, this would be the cerebrum mask for the t1w modality. Since at the cerebellum removal stage, the t2w image has been aligned with the t1w image. So, the t2w cerebrum mask is no longer needed.
