@@ -1,4 +1,9 @@
 # Updating
+## Release notes for version 1.2.0
+* We have fixed the issue that the pipeline fails to run on newer gpus. The latest version can be acquired by: docker pull ibeatgroup/ibeat_v2:release120.
+* Using Cuda 11+cudnn 8 will increase the GPU memory needs. On our local testing, we noticed that the needed minimal GPU memory is around 5GB.
+
+
 ## Improvement in Version 1.1.0
 * The cerebellum removal modal was improved.
 * Enable user to provide customized brain mask and/or cerebrum mask for the pipleine. See more details in [run the pipeline section](#run-the-pipeline).
