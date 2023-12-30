@@ -4,6 +4,7 @@
 * We have fixed the boundary issues. Previously, when the brains are too close to the boundary, the segmentation may generate inaccurate results. Now, the issue has been addressed.
 * We have made the system work more robust. When potential error occurs, the pipeline will stop and output more meaningful logs for easy problem location.
 * We updated the commandline parameters to make it more consistent with human instinct. Please refer to section **Running the pepeline container** for more details.
+* The latest version can be acquired by: `docker pull ibeatgroup/ibeat_v2:release200`.
 
 ## Release notes for version 1.2.0
 * We have fixed the issue that the pipeline fails to run on newer gpus. The latest version can be acquired by: `docker pull ibeatgroup/ibeat_v2:release120`.
