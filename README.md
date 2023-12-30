@@ -97,12 +97,12 @@ You can get detailed parameter information and simple example command by just ru
 
 The **user interventioned parameters** are:
 * `--skull_type`: how to do the skullstripping. `0`: skip. `1`: use our model. `2`: provide the mask. The mask file is provided by the following 2 parameters. (optional, default: `1`)
-* `--t1_skull_mask`: skull mask for T1. (optional, only meaningful when skull_type is set to `2`.)
-* `--t2_skull_mask`: skull mask for T2. (optional, only meaningful when skull_type is set to `2`.)
+* `--t1_skull_mask`: skull mask for T1. (optional, only meaningful when skull_type is set to `2`)
+* `--t2_skull_mask`: skull mask for T2. (optional, only meaningful when skull_type is set to `2`)
 * `--cere_type`: how to do the cerebellum removal. `0`: skip. `1`: use our model. `2`: provide the mask. The mask file is provided by the cere_mask parameter. (optional, default: `1`)
-* `--cere_mask`: cerebrum mask file. (optional, only meaningful when cere_type is set to `2`.)
+* `--cere_mask`: cerebrum mask file. (optional, only meaningful when cere_type is set to `2`)
 * `--tissue_type`: how to do the tissue segmentation. `0`: skip. `1`: use our model.  If `0`, the pipeline will only do the surface reconstruction with the input tissue specified by tissue_in parameter. (optional, default: `1`)
-* `--tissue_in`: the provided tissue map. (optional, only meaningful when cere_type is set to `0`.)
+* `--tissue_in`: the provided tissue map. (optional, only meaningful when cere_type is set to `0`)
 * `--skip_surface`: whether need to do the surface reconstruction. `0`: skip. `1`: do the reconstruction. (optional, default: `1`)
 * `--skull_prob_thresh`: The threshold for binarizing the skull stripping probability map. You can set this value between 0 and 1 to adjust the skull stripping mask. (optional, default: 0.5).
 * `--cerebrum_prob_thresh`: The threshold for binarizing the cerebrum probability map. You can set this value between 0 and 1 to adjust cerebrum mask. (optional, default: 0.5)
