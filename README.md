@@ -1,27 +1,27 @@
 # Updating
 ## Release notes for version 2.0.5
-* We have fixed some bugs in previous release, including:
-    * When input brain masks and cerebrum mask, the input masks can not be correctly recognized.
+* We have fixed bugs, including:
+    * The input masks cannot be correctly recognized when input brain mask or cerebrum mask.
     * When the brain is close to the boundary, the pipeline may occasionally exit abnormally.
     * The `--skip_surface` option may not work properly in some cases.
 * The option `--skull_prob_thresh` has been removed. Instead, we provided two more options, i.e., `--t1_skull_prob_thresh` and `--t2_skull_prob_thresh` to make it more flexible for different modalities especially when two modalities are input together.
-* We changed the skull stripping procedure when providing the T2w image to make it more robust.
+* We upgrade the skull stripping performance.
 * The latest version can be acquired by: `docker pull ibeatgroup/ibeat_v2:release205`.
 
 ## Release notes for version 2.0.0
 * We have improved the skull stripping and cerebellum removal model to make the toolkit more reliable.
 * We have fixed the boundary issues. Previously, when the brains are too close to the boundary, the segmentation may generate inaccurate results. Now, the issue has been addressed.
-* We have made the system work more robust. When potential error occurs, the pipeline will stop and output more meaningful logs for easy problem location.
-* We updated the commandline parameters to make it more consistent with human instinct. Please refer to section **Running the pepeline container** for more details.
+* We have made the system work more robust. When the potential error occurs, the pipeline will stop and output more meaningful logs for easy problem location.
+* We updated the command line parameters to make them more consistent with human instinct. Please refer to section **Running the pipeline container** for more details.
 * The latest version can be acquired by: `docker pull ibeatgroup/ibeat_v2:release200`.
 
 ## Release notes for version 1.2.0
-* We have fixed the issue that the pipeline fails to run on newer gpus. The latest version can be acquired by: `docker pull ibeatgroup/ibeat_v2:release120`.
+* We have fixed the issue that the pipeline fails to run on newer GPUs. The latest version can be acquired by: `docker pull ibeatgroup/ibeat_v2:release120`.
 * Using Cuda 11+cudnn 8 will increase the GPU memory needs. On our local testing, we noticed that the needed minimal GPU memory is around 5GB.
 
 ## Improvement in Version 1.1.0
 * The cerebellum removal modal was improved.
-* Enable user to provide customized brain mask and/or cerebrum mask for the pipleine. See more details in [run the pipeline section](#run-the-pipeline).
+* Enable user to provide customized brain mask and/or cerebrum mask for the pipeline. See more details in [run the pipeline section](#run-the-pipeline).
 * The latest version can be acquired by: `docker pull ibeatgroup/ibeat_v2:release110`.
 
 # Introduction
@@ -119,14 +119,14 @@ The **user interventioned parameters** are:
 * `--gpu_id`: determine which gpu will be used. `0`, `1`, `2`, … (optional, default: `0`)
 
 Note, these parameters are modified since version release 200.
-* `--skull_mask`(removed from version release200): the path of the user provided brain mask. If there is only one modality (either `--t1` or `--t2` is used), this would be the brain mask for that modality. If there are two modalities input (both `--t1` and `--t2` are used), this would be the brain mask for the t1w modality. In this case, if you also want to provide a brain mask for t2 modality, please use additional parameter `--exmod_skull_mask` (see below).
+* `--skull_mask`(removed from version release200): the path of the user provided brain mask. If there is only one modality (either `--t1` or `--t2` is used), this would be the brain mask for that modality. If there are two modalities input (both `--t1` and `--t2` are used), this would be the brain mask for the t1w modality. In this case, if you also want to provide a brain mask for t2 modality, please use an additional parameter `--exmod_skull_mask` (see below).
 * `--exmod_skull_mask`(removed from version release200): the path of the user provided brain mask for t2w image when both t1w and t2w images are input.
 * `--cere_mask`(removed from version release200): the path of the user provided cerebrum mask. If there is only one modality, this would be the cerebrum mask for that modality. If there are two modalities input, this would be the cerebrum mask for the t1w modality. Since at the cerebellum removal stage, the t2w image has been aligned with the t1w image. So, the t2w cerebrum mask is no longer needed.
 
 ```
 nvidia-docker run --rm -it -v /your_data_folder:/InfantData --user $(id -u):$(id -g) ibeatgroup/ibeat_v2:release100 --t1 <t1_file> --age <t1_image_age> --out_dir <result_dir> --sub_name <subject_id>
 ```
-The above command is a typical example to process one subject with both T1w and T2w images. You can also only input a single T1w (or T2w) image if you only have one modality.
+The above command is a typical example of processing one subject with both T1w and T2w images. You can also only input a single T1w (or T2w) image if you only have one modality.
 
 ## Batch processing
 Since `docker run --gpus=all --rm -it -v /your_data_folder:/InfantData --user $(id -u):$(id -g) ibeatgroup/ibeat_v2:release100` can be regarded as single command, you can also write a script to process the data in a batch by treating the pipeline command as a simple command in a ```for``` or ```while``` loop. The following is a simple example if you are using the bash script,
@@ -137,7 +137,7 @@ done
 ```
 
 ## Output illustration
-After the processing is finished, in the "mounted" folder **`your_data_folder`**, all the processing results will be generated. The following explain what the results are: 
+After the processing is finished, in the "mounted" folder **`your_data_folder`**, all the processing results will be generated. The following explains what the results are: 
 * T1(or T2).nii.gz:	The raw image file.
 * T1(or T2)-brainmask.nii.gz: The brain mask of T1w (or T2w).
 * T1(or T2)-ceremask.nii.gz: The cerebrum mask of T1w (or T2w).
@@ -153,11 +153,11 @@ After the processing is finished, in the "mounted" folder **`your_data_folder`**
 
 # Frequently asked questions
 ### Do I must have a GPU to run the pipeline?
-Yes. In the current version, we do need GPU support to run the pipeline. In future, we will also release the pipeline that only needs a CPU for computation.
+Yes. In the current version, we do need GPU support to run the pipeline. In the future, we will also release the pipeline that only needs a CPU for computation.
 ### Is the pipeline robust to the imaging parameters?
-Yes. We have successfully processed 16,000+ infant brain images with various imaging protocols and scanners from 100+ instutions. Please see https://ibeat.wildapricot.org/Feedbacks. 
+Yes. We have successfully processed 16,000+ infant brain images with various imaging protocols and scanners from 100+ institutions. Please see https://ibeat.wildapricot.org/Feedbacks. 
 ### Are there any differences between iBEAT V2.0 Docker and iBEAT V2.0 Cloud (http://www.ibeat.cloud)?
-Yes. The iBEAT V2.0 Cloud (http://www.ibeat.cloud) is timely updated with our latest developments, while the Docker version could be slightly delayed in updating. For the optimal performance, iBEAT V2.0 Cloud is highly recommended.
+Yes. The iBEAT V2.0 Cloud (http://www.ibeat.cloud) is timely updated with our latest developments, while the Docker version could be slightly delayed in updating. For optimal performance, iBEAT V2.0 Cloud is highly recommended.
 
 
 # How to Cite?
