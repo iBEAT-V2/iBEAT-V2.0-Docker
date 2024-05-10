@@ -1,6 +1,15 @@
 # Updating
+## Release notes for version 2.0.5
+* We have fixed some bugs in previous release, including:
+    * When input brain masks and cerebrum mask, the input masks can not be correctly recognized.
+    * When the brain is close to the boundary, the pipeline may occasionally exit abnormally.
+    * The `--skip_surface` option may not work properly in some cases.
+* The option `--skull_prob_thresh` has been removed. Instead, we provided two more options, i.e., `--t1_skull_prob_thresh` and `--t2_skull_prob_thresh` to make it more flexible for different modalities especially when two modalities are input together.
+* We changed the skull stripping procedure when providing the T2w image to make it more robust.
+* The latest version can be acquired by: `docker pull ibeatgroup/ibeat_v2:release205`.
+
 ## Release notes for version 2.0.0
-* We have  improved the skull stripping and cerebellum removal model to make the toolkit more reliable.
+* We have improved the skull stripping and cerebellum removal model to make the toolkit more reliable.
 * We have fixed the boundary issues. Previously, when the brains are too close to the boundary, the segmentation may generate inaccurate results. Now, the issue has been addressed.
 * We have made the system work more robust. When potential error occurs, the pipeline will stop and output more meaningful logs for easy problem location.
 * We updated the commandline parameters to make it more consistent with human instinct. Please refer to section **Running the pepeline container** for more details.
@@ -9,7 +18,6 @@
 ## Release notes for version 1.2.0
 * We have fixed the issue that the pipeline fails to run on newer gpus. The latest version can be acquired by: `docker pull ibeatgroup/ibeat_v2:release120`.
 * Using Cuda 11+cudnn 8 will increase the GPU memory needs. On our local testing, we noticed that the needed minimal GPU memory is around 5GB.
-
 
 ## Improvement in Version 1.1.0
 * The cerebellum removal modal was improved.
@@ -105,7 +113,8 @@ The **user interventioned parameters** are:
 * `--tissue_type`: how to do the tissue segmentation. `0`: skip. `1`: use our model.  If `0`, the pipeline will only do the surface reconstruction with the input tissue specified by tissue_in parameter. (optional, default: `1`)
 * `--tissue_in`: the provided tissue map. (optional, only meaningful when cere_type is set to `0`)
 * `--skip_surface`: whether need to do the surface reconstruction. `0`: skip. `1`: do the reconstruction. (optional, default: `1`)
-* `--skull_prob_thresh`: The threshold for binarizing the skull stripping probability map. You can set this value between 0 and 1 to adjust the skull stripping mask. (optional, default: 0.5).
+* `--t1_skull_prob_thresh`: The threshold for binarizing the skull stripping probability map for the T1w modality. You can set this value between 0 and 1 to adjust the skull stripping mask. (optional, default: 0.5).
+* `--t2_skull_prob_thresh`: The threshold for binarizing the skull stripping probability map for the T2w modality. You can set this value between 0 and 1 to adjust the skull stripping mask. (optional, default: 0.9).
 * `--cerebrum_prob_thresh`: The threshold for binarizing the cerebrum probability map. You can set this value between 0 and 1 to adjust cerebrum mask. (optional, default: 0.5)
 * `--gpu_id`: determine which gpu will be used. `0`, `1`, `2`, … (optional, default: `0`)
 
