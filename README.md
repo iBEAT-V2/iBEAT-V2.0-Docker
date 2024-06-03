@@ -73,7 +73,7 @@ docker run --rm --gpus=all nvidia/cuda:9.0-base nvidia-smi
 If succeeded, the output should be the GPU card information on your PC. 
 
 ### Download the pipeline
-Run ```docker pull ibeatgroup/ibeat_v2:release_version_tag```, where ```release_version_tag``` is the container tag. Currently, the latest container tag is ```release100```, thus run ```docker pull ibeatgroup/ibeat_v2:release100``` to download the pipeline.
+Run ```docker pull ibeatgroup/ibeat_v2:release_version_tag```, where ```release_version_tag``` is the container tag. Currently, the latest container tag is ```release205```, thus run ```docker pull ibeatgroup/ibeat_v2:release205``` to download the pipeline.
 
 After downloading, you can use ```docker images``` to see the container images you have downloaded.
 
