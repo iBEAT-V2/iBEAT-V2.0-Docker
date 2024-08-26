@@ -1,4 +1,9 @@
 # Updating
+
+## Release notes for version 2.0.8
+* We upgrade the cerebellum removal performance.
+* The latest version can be acquired by: `docker pull ibeatgroup/ibeat_v2:release208`.
+
 ## Release notes for version 2.0.5
 * We have fixed bugs, including:
     * The input masks cannot be correctly recognized when input brain mask or cerebrum mask.
