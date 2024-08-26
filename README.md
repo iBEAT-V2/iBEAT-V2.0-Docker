@@ -1,7 +1,7 @@
 # Updating
 
 ## Release notes for version 2.0.8
-* We upgrade the cerebellum removal performance.
+* We upgraded the cerebellum removal performance.
 * The latest version can be acquired by: `docker pull ibeatgroup/ibeat_v2:release208`.
 
 ## Release notes for version 2.0.5
@@ -10,7 +10,7 @@
     * When the brain is close to the boundary, the pipeline may occasionally exit abnormally.
     * The `--skip_surface` option may not work properly in some cases.
 * The option `--skull_prob_thresh` has been removed. Instead, we provided two more options, i.e., `--t1_skull_prob_thresh` and `--t2_skull_prob_thresh` to make it more flexible for different modalities especially when two modalities are input together.
-* We upgrade the skull stripping performance.
+* We upgraded the skull stripping performance.
 * The latest version can be acquired by: `docker pull ibeatgroup/ibeat_v2:release205`.
 
 ## Release notes for version 2.0.0
