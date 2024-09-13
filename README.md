@@ -1,5 +1,8 @@
 # Updating
 
+## Keynote: After successfully installing the iBEAT Docker, if you encounter any errors or bugs, please send us the log file along with the testing subject for efficient troubleshooting.
+
+
 ## Release notes for version 2.0.8
 * We upgraded the cerebellum removal performance.
 * The latest version can be acquired by: `docker pull ibeatgroup/ibeat_v2:release208`.
