@@ -2,6 +2,9 @@
 
 ## Keynote: After successfully installing the iBEAT Docker, if you encounter any errors or bugs, please send us the log file along with the testing subject for efficient troubleshooting.
 
+## Release notes for version 2.1.0
+* We add the subcortical semgmentation module to this release. By default, when you using this version, it will output the subcortical segmentation file, whose filename is ended with "-subcortical-segmentation.nii.gz". If you want to skip the subcortical segmentation module, you can add an additional option with "--subcortical_type 0".
+* The latest version can be acquired by `docker pull ibeatgroup/ibeat_v2:release210`.
 
 ## Release notes for version 2.0.8
 * We upgraded the cerebellum removal performance.
