@@ -90,7 +90,7 @@ After downloading, you can use ```docker images``` to see the container images y
 
 # Running the pipeline container
 ## Get the free license
-The container is totally free. Please first register on the [iBEAT V2.0 Cloud](https://ibeat.wildapricot.org/Sys/Login?ReturnUrl=%2fdocker) to get a free license.
+The container is totally free. Please first register on the [iBEAT V2.0 Cloud]([https://ibeat.wildapricot.org/docker]) to get a free license.
 
 ## Run the pipeline
 Before running the pipeline, please:
@@ -191,6 +191,7 @@ Li Wang, Ph.D.,  li_wang@med.unc.edu\
 Gang Li, Ph.D.,  gang_li@med.unc.edu\
 Department of Radiology and Biomedical Research Imaging Center\
 The University of North Carolina at Chapel Hill
+
 
 
 
